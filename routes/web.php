@@ -29,6 +29,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\RuteArmadaController;
 use App\Http\Controllers\DashboardArtikelController;
+use App\Http\Controllers\ChatBotController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LaporanWargaAdminController;
@@ -505,3 +506,8 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
     // API endpoint for AJAX requests
     Route::get('/artikel/api/data', [DashboardArtikelController::class, 'api'])->name('artikel.api');
 });
+
+// ===================
+// CHATBOT ROUTES
+// ===================
+Route::post('/chatbot/chat', [ChatBotController::class, 'chat'])->name('chatbot.chat');
